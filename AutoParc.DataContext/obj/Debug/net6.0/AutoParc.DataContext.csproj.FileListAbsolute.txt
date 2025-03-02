@@ -10,3 +10,8 @@
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/refint/AutoParc.DataContext.dll
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.pdb
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/ref/AutoParc.DataContext.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/bin/Debug/net6.0/AutoParc.DataContext.runtimeconfig.json
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/bin/Debug/net6.0/AutoParc.Model.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/bin/Debug/net6.0/AutoParc.Model.pdb
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.csproj.CopyComplete
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.genruntimeconfig.cache

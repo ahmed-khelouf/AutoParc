@@ -10,3 +10,5 @@
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/obj/Debug/net6.0/refint/AutoParc.Model.dll
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.pdb
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/obj/Debug/net6.0/ref/AutoParc.Model.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/bin/Debug/net6.0/AutoParc.Model.runtimeconfig.json
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.genruntimeconfig.cache
