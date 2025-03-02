@@ -1,0 +1,12 @@
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.DataSource.deps.json
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.DataSource.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.DataSource.pdb
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.csproj.AssemblyReference.cache
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.AssemblyInfoInputs.cache
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.AssemblyInfo.cs
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.csproj.CoreCompileInputs.cache
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/refint/AutoParc.DataSource.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.pdb
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/ref/AutoParc.DataSource.dll

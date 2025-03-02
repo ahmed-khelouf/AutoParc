@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AutoParc.DataContext/1.0.0": {
+        "runtime": {
+          "AutoParc.DataContext.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AutoParc.DataContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
