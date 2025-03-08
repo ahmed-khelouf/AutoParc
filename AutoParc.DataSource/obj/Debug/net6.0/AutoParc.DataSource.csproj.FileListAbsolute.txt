@@ -12,3 +12,6 @@
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/ref/AutoParc.DataSource.dll
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.DataSource.runtimeconfig.json
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.genruntimeconfig.cache
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.Model.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.Model.pdb
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.csproj.CopyComplete

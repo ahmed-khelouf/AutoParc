@@ -1,8 +1,14 @@
+using AutoParc.WebUI.Config;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDependencyInjection(builder.Configuration);
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();  // Ajoute la sortie des logs à la console
+builder.Logging.AddDebug(); 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,6 +23,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

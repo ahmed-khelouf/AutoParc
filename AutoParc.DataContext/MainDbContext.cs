@@ -1,10 +1,12 @@
 using AutoParc.DataContext.EntityTypesConfiguration;
 using AutoParc.Model;
+using AutoParc.Model.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AutoParc.DataContext;
 
-public class MainDbContext : DbContext
+public class MainDbContext : IdentityDbContext<UserModel>
 {
     protected MainDbContext()
     {

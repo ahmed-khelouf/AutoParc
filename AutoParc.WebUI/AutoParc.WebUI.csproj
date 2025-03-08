@@ -17,4 +17,10 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\AutoParc.DataContext\AutoParc.DataContext.csproj" />
+      <ProjectReference Include="..\AutoParc.DataSource\AutoParc.DataSource.csproj" />
+      <ProjectReference Include="..\AutoParc.Senders\AutoParc.Senders.csproj" />
+    </ItemGroup>
+
 </Project>
