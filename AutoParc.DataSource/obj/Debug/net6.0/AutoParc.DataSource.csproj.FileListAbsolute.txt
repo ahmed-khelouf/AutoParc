@@ -15,3 +15,5 @@
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.Model.dll
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.Model.pdb
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/obj/Debug/net6.0/AutoParc.DataSource.csproj.CopyComplete
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.DataContext.dll
+/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/bin/Debug/net6.0/AutoParc.DataContext.pdb

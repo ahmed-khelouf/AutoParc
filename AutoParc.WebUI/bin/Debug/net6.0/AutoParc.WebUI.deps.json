@@ -782,6 +782,7 @@
       },
       "AutoParc.DataSource/1.0.0": {
         "dependencies": {
+          "AutoParc.DataContext": "1.0.0",
           "AutoParc.Model": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.36",

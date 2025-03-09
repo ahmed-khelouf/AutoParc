@@ -1,5 +1,6 @@
 using AutoParc.DataContext;
 using AutoParc.DataSource;
+using AutoParc.DataSource.Interface;
 using AutoParc.Model.Identity;
 using AutoParc.Senders;
 using AutoParc.Senders.Interfaces;
@@ -31,6 +32,9 @@ public static class ServicesExtensionMethods
         services.AddScoped<IMailSender, MailSender>();
         services.AddScoped<SignInDataSource>();
         services.AddScoped<UserDataSource>();
+        
+        services.AddScoped<IEntrepriseDataSource, EntrepriseDataSource>();
+        services.AddScoped<IVehiculeDataSource, VehiculeDataSource>();
         
         return services;
     }

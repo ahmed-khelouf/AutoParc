@@ -166,10 +166,6 @@ namespace AutoParc.DataContext.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -193,6 +189,24 @@ namespace AutoParc.DataContext.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "admin-user",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e9d26257-8bf6-450f-aa7b-4ff27538c0b7",
+                            Email = "admin@autoparc.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@AUTOPARC.COM",
+                            NormalizedUserName = "ADMIN@AUTOPARC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEK0L0gBsi5cX7er9dndclNJV7F0xhAuTG08ZjaXW0O1EMcxNLgvpWRah6xpNfygOzA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "db759dce-12c4-47ce-9ee9-1e03638f388f",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@autoparc.com"
+                        });
                 });
 
             modelBuilder.Entity("AutoParc.Model.VehiculeModel", b =>
@@ -287,6 +301,15 @@ namespace AutoParc.DataContext.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "role-admin",
+                            ConcurrencyStamp = "581602e6-659b-465d-ac32-39f870ae2872",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -374,6 +397,13 @@ namespace AutoParc.DataContext.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "admin-user",
+                            RoleId = "role-admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

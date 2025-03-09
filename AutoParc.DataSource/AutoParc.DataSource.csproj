@@ -19,6 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AutoParc.DataContext\AutoParc.DataContext.csproj" />
       <ProjectReference Include="..\AutoParc.Model\AutoParc.Model.csproj" />
     </ItemGroup>
 

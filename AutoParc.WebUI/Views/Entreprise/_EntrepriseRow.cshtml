@@ -1,0 +1,29 @@
+@model AutoParc.WebUI.ViewsModels.Entreprise.EntrepriseViewModel
+
+<tr>
+    <td>@Model.Nom</td>
+    <td>
+        <span class="@(Model.ContratActif ? "text-success" : "text-danger")">
+            @if (Model.ContratActif)
+            {
+                <span>Contrat Actif</span>
+            }
+            else
+            {
+                <span>Contrat Inactif</span>
+            }
+        </span>
+    </td>
+    <td>
+        @if (Model.ContratActif)
+        {
+            <a href="@Url.Action("GetVehicule", "Vehicule", new { IdEntreprise = Model.Id })" class="btn btn-primary">
+                Voir les véhicules
+            </a>
+        }
+        else
+        {
+            <span>Aucune action disponible</span>
+        }
+    </td>
+</tr>

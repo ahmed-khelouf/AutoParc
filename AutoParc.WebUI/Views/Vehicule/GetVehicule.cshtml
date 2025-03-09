@@ -1,0 +1,89 @@
+@model AutoParc.WebUI.ViewsModels.Vehicule.GetVehiculeByEntrepriseViewModel
+
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<div class="container">
+    <h2>@Model.PageTitle</h2>
+
+    @if (Model.VehiculeToEntreprise.Any())
+    {
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Marque</th>
+                <th>Modèle</th>
+                <th>Disponibilité</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var vehicule in Model.VehiculeToEntreprise)
+            {
+                <tr>
+                    <td>@vehicule.Marque</td>
+                    <td>@vehicule.Modele</td>
+                    <td>
+                            <span class="@(vehicule.Disponibilite ? "text-success" : "text-danger")">
+                                @(vehicule.Disponibilite ? "Disponible" : "Indisponible")
+                            </span>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Details", "Vehicule", new { id = vehicule.Id })" class="btn btn-primary">
+                            Voir Détails
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Aucun véhicule associé à cette entreprise.</p>
+    }
+</div>
+
+<style>
+    .table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .text-success {
+        color: green;
+        font-weight: bold;
+    }
+
+    .text-danger {
+        color: red;
+        font-weight: bold;
+    }
+</style>

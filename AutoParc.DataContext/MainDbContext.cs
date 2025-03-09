@@ -1,6 +1,7 @@
 using AutoParc.DataContext.EntityTypesConfiguration;
 using AutoParc.Model;
 using AutoParc.Model.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +31,43 @@ public class MainDbContext : IdentityDbContext<UserModel>
 
     private void SeedDatabase(ModelBuilder modelBuilder)
     {
+        // Création du rôle "Admin"
+        var adminRoleId = "role-admin";
+        modelBuilder.Entity<IdentityRole>().HasData(
+            new IdentityRole
+            {
+                Id = adminRoleId,
+                Name = "Admin",
+                NormalizedName = "ADMIN"
+            }
+        );
+
+        // Création de l'utilisateur admin
+        var adminUserId = "admin-user";
+        var hasher = new PasswordHasher<UserModel>();
+        var adminUser = new UserModel
+        {
+            Id = adminUserId,
+            UserName = "admin@autoparc.com",
+            Email = "admin@autoparc.com",
+            NormalizedUserName = "ADMIN@AUTOPARC.COM",
+            NormalizedEmail = "ADMIN@AUTOPARC.COM",
+            EmailConfirmed = true,
+            SecurityStamp = Guid.NewGuid().ToString()
+        };
+        adminUser.PasswordHash = hasher.HashPassword(adminUser, "Admin123!");
+
+        modelBuilder.Entity<UserModel>().HasData(adminUser);
+
+        // Assignation du rôle "Admin" à l'utilisateur admin
+        modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+            new IdentityUserRole<string>
+            {
+                UserId = adminUserId,
+                RoleId = adminRoleId
+            }
+        );
+    
         modelBuilder.Entity<EntrepriseModel>()
             .HasData(
                 new EntrepriseModel { Id = 1, Nom = "Test 1", ContratActif = true },

@@ -71,6 +71,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9WZXJpZnlDb2RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Entreprise/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW50cmVwcmlzZS9pbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Entreprise/_EntrepriseRow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW50cmVwcmlzZS9fRW50cmVwcmlzZVJvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -85,6 +93,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Vehicule/GetVehicule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWN1bGUvR2V0VmVoaWN1bGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/_ViewImports.cshtml]

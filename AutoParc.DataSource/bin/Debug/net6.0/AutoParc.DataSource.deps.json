@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "AutoParc.DataSource/1.0.0": {
         "dependencies": {
+          "AutoParc.DataContext": "1.0.0",
           "AutoParc.Model": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.36",
@@ -765,6 +766,20 @@
           }
         }
       },
+      "AutoParc.DataContext/1.0.0": {
+        "dependencies": {
+          "AutoParc.Model": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.AspNetCore.Identity.UI": "6.0.6",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.36",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.36",
+          "Microsoft.Extensions.Configuration.FileExtensions": "6.0.1",
+          "Microsoft.Extensions.Configuration.Json": "6.0.1"
+        },
+        "runtime": {
+          "AutoParc.DataContext.dll": {}
+        }
+      },
       "AutoParc.Model/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
@@ -1324,6 +1339,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "AutoParc.DataContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "AutoParc.Model/1.0.0": {
       "type": "project",

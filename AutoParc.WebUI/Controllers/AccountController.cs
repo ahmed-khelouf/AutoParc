@@ -16,13 +16,17 @@ namespace EventTracker.WebUI.Controllers
         private readonly UserDataSource _userDataSource;
         
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<UserModel> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public AccountController(ILogger<HomeController> logger, 
-            SignInDataSource signInDataSource, UserDataSource userDataSource)
+            SignInDataSource signInDataSource, UserDataSource userDataSource, UserManager<UserModel> userManager, RoleManager<IdentityRole> roleManager)
         {
             _logger = logger;
             _signInDataSource = signInDataSource;
             _userDataSource = userDataSource;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
         
         //
@@ -96,7 +100,7 @@ namespace EventTracker.WebUI.Controllers
 
             if (ModelState.IsValid)
             {
-                var user = new UserModel() { UserName = model.Email, Email = model.Email , Role = "d"};
+                var user = new UserModel() { UserName = model.Email, Email = model.Email };
                 var result = await _userDataSource.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -106,7 +110,15 @@ namespace EventTracker.WebUI.Controllers
                     //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                     //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
                     //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
+                    if (!await _roleManager.RoleExistsAsync("Client"))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole("Client"));
+                    }
+
+                    
+                    await _userManager.AddToRoleAsync(user, "Client");
                     await _signInDataSource.SignInAsync(user, isPersistent: false);
+                    
                     _logger.LogInformation(3, "User created a new account with password.");
                     return RedirectToLocal(returnUrl);
                 }
@@ -125,7 +137,7 @@ namespace EventTracker.WebUI.Controllers
         {
             await _signInDataSource.SignOutAsync();
             _logger.LogInformation(4, "User logged out.");
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //

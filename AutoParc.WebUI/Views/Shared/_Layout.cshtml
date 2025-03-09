@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -8,6 +9,34 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/AutoParc.WebUI.styles.css" asp-append-version="true"/>
 </head>
+<style>
+    .deconnexion-btn {
+        color: #007bff; 
+        text-decoration: none;
+        padding: 10px 20px; 
+        border: none; 
+        background-color: transparent; 
+        font-weight: bold;
+    }
+
+    .deconnexion-btn:hover {
+        color: #0056b3; 
+    }
+
+    .deconnexion-btn:focus {
+        outline: none;
+    }
+    
+    .navbar-nav .nav-item .nav-link {
+        color: #007bff; 
+        text-decoration: none;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+        color: #0056b3; 
+        text-decoration: none;
+    }
+</style>
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -22,19 +51,37 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" class="nav-link text-dark">
-                            <button type="submit" class="btn btn-link text-dark p-0">Deconnexion</button>
-                        </form>
-                    </li>
+                @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Entreprise" asp-action="Index">Entreprise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Inscription</a>
+                            </li>
+                        }
+
+               
+                        <li class="nav-item">
+                            <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post">
+                                <button type="submit" class="deconnexion-btn">Déconnexion</button>
+                            </form>
+                        </li>
+                    }
+                else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Connexion</a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
@@ -46,6 +93,7 @@
         &copy; 2025 - AutoParc.WebUI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
 </footer>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>

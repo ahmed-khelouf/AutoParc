@@ -115,6 +115,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj": {
+                "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj"
+              },
               "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/AutoParc.Model.csproj": {
                 "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/AutoParc.Model.csproj"
               }
