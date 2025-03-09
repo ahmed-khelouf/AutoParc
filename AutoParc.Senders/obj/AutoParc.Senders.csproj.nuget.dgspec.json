@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj": {}
+    "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj": {}
   },
   "projects": {
-    "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj": {
+    "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj",
+        "projectUniqueName": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj",
         "projectName": "AutoParc.Senders",
-        "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj",
-        "packagesPath": "/Users/ahmedkhelouf/.nuget/packages/",
-        "outputPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/obj/",
+        "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj",
+        "packagesPath": "/Users/ayatkhelouf/.nuget/packages/",
+        "outputPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ahmedkhelouf/.nuget/NuGet/NuGet.Config"
+          "/Users/ayatkhelouf/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/ayatkhelouf/.dotnet/sdk/6.0.428/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -79,15 +79,21 @@ public class MainDbContext : IdentityDbContext<UserModel>
             .HasData(
                 new EmployeModel { Id = 1, Nom = "Test 1", Prenom = "Test 1",  EntrepriseId = 1  , VehiculeId = 1},
                 new EmployeModel { Id = 2, Nom = "Test 2", Prenom = "Test 2",  EntrepriseId = 2 , VehiculeId = 2 },
-                new EmployeModel { Id = 3, Nom = "Test 3", Prenom = "Test 3",  EntrepriseId = 3 , VehiculeId = 3}
+                new EmployeModel { Id = 3, Nom = "Test 3", Prenom = "Test 3",  EntrepriseId = 3 , VehiculeId = 3},
+                new EmployeModel { Id = 4, Nom = "Test 4", Prenom = "Test 4",  EntrepriseId = 3 , VehiculeId = 4},
+                new EmployeModel { Id = 5, Nom = "Test 5", Prenom = "Test 5",  EntrepriseId = 3 , VehiculeId = 5}
                 );
         
         modelBuilder.Entity<VehiculeModel>()
             .HasData(
                 new VehiculeModel { Id = 1, Marque = "Test 1", Modele = "Test 1",  EntrepriseId = 1  , Disponibilite = true , EmployeId = 1},
                 new VehiculeModel { Id = 2, Marque = "Test 2", Modele = "Test 2",  EntrepriseId = 2 , Disponibilite = false , RaisonIndisponibilite = "Test 2" , EmployeId = 2},
-                new VehiculeModel { Id = 3, Marque = "Test 3", Modele = "Test 3",  EntrepriseId = 3 , Disponibilite = true , EmployeId = 3}
+                new VehiculeModel { Id = 3, Marque = "Test 3", Modele = "Test 3",  EntrepriseId = 3 , Disponibilite = true , EmployeId = 3},
+                new VehiculeModel { Id = 4, Marque = "Test 4", Modele = "Test 4",  EntrepriseId = 3 , Disponibilite = true , EmployeId = 4},
+                new VehiculeModel { Id = 5, Marque = "Test 5", Modele = "Test 5",  EntrepriseId = 3 , Disponibilite = true , EmployeId = 5}
             );
+                
+        
                 
     }
 

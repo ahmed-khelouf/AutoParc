@@ -12,3 +12,17 @@
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/obj/Debug/net6.0/ref/AutoParc.Model.dll
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/bin/Debug/net6.0/AutoParc.Model.runtimeconfig.json
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.genruntimeconfig.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/bin/Debug/net6.0/AutoParc.Model.deps.json
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/bin/Debug/net6.0/AutoParc.Model.runtimeconfig.json
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/bin/Debug/net6.0/AutoParc.Model.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/bin/Debug/net6.0/AutoParc.Model.pdb
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.csproj.AssemblyReference.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.AssemblyInfoInputs.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.AssemblyInfo.cs
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.csproj.CoreCompileInputs.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/refint/AutoParc.Model.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.pdb
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/AutoParc.Model.genruntimeconfig.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/obj/Debug/net6.0/ref/AutoParc.Model.dll

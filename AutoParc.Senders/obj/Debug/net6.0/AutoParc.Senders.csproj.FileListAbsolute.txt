@@ -10,3 +10,15 @@
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/obj/Debug/net6.0/refint/AutoParc.Senders.dll
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.pdb
 /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/obj/Debug/net6.0/ref/AutoParc.Senders.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/bin/Debug/net6.0/AutoParc.Senders.deps.json
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/bin/Debug/net6.0/AutoParc.Senders.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/bin/Debug/net6.0/AutoParc.Senders.pdb
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.csproj.AssemblyReference.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.AssemblyInfoInputs.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.AssemblyInfo.cs
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.csproj.CoreCompileInputs.cache
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/refint/AutoParc.Senders.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/AutoParc.Senders.pdb
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/obj/Debug/net6.0/ref/AutoParc.Senders.dll

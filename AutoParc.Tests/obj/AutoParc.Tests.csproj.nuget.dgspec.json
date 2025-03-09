@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj": {}
+    "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj": {}
   },
   "projects": {
-    "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj": {
+    "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj",
+        "projectUniqueName": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj",
         "projectName": "AutoParc.Tests",
-        "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj",
-        "packagesPath": "/Users/ahmedkhelouf/.nuget/packages/",
-        "outputPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Tests/obj/",
+        "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Tests/AutoParc.Tests.csproj",
+        "packagesPath": "/Users/ayatkhelouf/.nuget/packages/",
+        "outputPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ahmedkhelouf/.nuget/NuGet/NuGet.Config"
+          "/Users/ayatkhelouf/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/ayatkhelouf/.dotnet/sdk/6.0.428/RuntimeIdentifierGraph.json"
         }
       }
     }

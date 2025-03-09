@@ -1,0 +1,68 @@
+@model AutoParc.WebUI.ViewsModels.Vehicule.AddOrEditVehiculeViewModel
+
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    <form method="post" asp-action="AddOrEdit" asp-controller="Vehicule">
+        <div asp-validation-summary="All"></div>
+        <input asp-for="VehiculeToAddOrEdit.Id" type="hidden" />
+
+       
+        <div class="mb-3">
+            <label for="Marque" class="form-label">Marque</label>
+            <input asp-for="VehiculeToAddOrEdit.Marque" class="form-control" id="Marque" placeholder="Entrez la marque de la voiture" />
+            <div class="invalid-feedback">
+                <span asp-validation-for="VehiculeToAddOrEdit.Marque" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="Modele" class="form-label">Modèle</label>
+            <input asp-for="VehiculeToAddOrEdit.Modele" class="form-control" id="Modele" placeholder="Entrez le modèle de la voiture" />
+            <div class="invalid-feedback">
+                <span asp-validation-for="VehiculeToAddOrEdit.Modele" class="text-danger"></span>
+            </div>
+        </div>
+
+      
+        <div class="mb-3 form-check">
+            <input asp-for="VehiculeToAddOrEdit.Disponibilite" type="checkbox" class="form-check-input" id="Disponibilite" />
+            <label class="form-check-label" for="Disponibilite">Disponible</label>
+            <div class="invalid-feedback">
+                <span asp-validation-for="VehiculeToAddOrEdit.Disponibilite" class="text-danger"></span>
+            </div>
+        </div>
+
+    
+        <div class="mb-3">
+            <label for="RaisonIndisponibilite" class="form-label">Raison de l'indisponibilité (si la voiture n'est pas disponible)</label>
+            <input asp-for="VehiculeToAddOrEdit.RaisonIndisponibilite" class="form-control" id="RaisonIndisponibilite" placeholder="Entrez la raison si la voiture est indisponible" />
+            <div class="invalid-feedback">
+                <span asp-validation-for="VehiculeToAddOrEdit.RaisonIndisponibilite" class="text-danger"></span>
+            </div>
+        </div>
+
+       
+        <div class="mb-3">
+            <label for="EntrepriseId" class="form-label">Entreprise</label>
+            <select asp-for="EntrepriseId" asp-items="Model.EntreprisesAvailable" class="form-control">
+                <option value="">Sélectionnez une entreprise</option> 
+            </select>
+            <span asp-validation-for="EntrepriseId" class="text-danger"></span>
+        </div>
+        <p><strong>ID du véhicule :</strong> @Model.VehiculeToAddOrEdit?.Id</p>
+
+        <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">
+                @(Model.VehiculeToAddOrEdit != null && Model.VehiculeToAddOrEdit.Id != null ? "Modifier la voiture" : "Ajouter une voiture")
+            </button>
+        </div>
+    </form>
+</div>
+
+

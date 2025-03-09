@@ -8,105 +8,113 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AutoParc.WebUI
 build_property.RootNamespace = AutoParc.WebUI
-build_property.ProjectDir = /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/
+build_property.ProjectDir = /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI
+build_property.MSBuildProjectDirectory = /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/ConfirmEmail.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Db25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/ExternalLoginConfirmation.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/ExternalLoginConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9FeHRlcm5hbExvZ2luQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/ExternalLoginFailure.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/ExternalLoginFailure.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9FeHRlcm5hbExvZ2luRmFpbHVyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/ForgotPassword.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/ForgotPasswordConfirmation.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/Lockout.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/Login.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/Register.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/ResetPassword.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/ResetPasswordConfirmation.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/SendCode.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/SendCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TZW5kQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/UseRecoveryCode.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/UseRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Vc2VSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/VerifyAuthenticatorCode.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/VerifyAuthenticatorCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9WZXJpZnlBdXRoZW50aWNhdG9yQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Account/VerifyCode.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Account/VerifyCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9WZXJpZnlDb2RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Entreprise/index.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Entreprise/AddOrEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW50cmVwcmlzZS9BZGRPckVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Entreprise/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW50cmVwcmlzZS9pbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Entreprise/_EntrepriseRow.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Entreprise/_EntrepriseRow.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW50cmVwcmlzZS9fRW50cmVwcmlzZVJvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Home/Index.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Home/Privacy.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Shared/Error.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Vehicule/GetVehicule.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Vehicule/AddOrEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWN1bGUvQWRkT3JFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Vehicule/GetVehicule.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWN1bGUvR2V0VmVoaWN1bGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/_ViewImports.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/_ViewStart.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/Views/Shared/_Layout.cshtml]
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ij30rxvuoi

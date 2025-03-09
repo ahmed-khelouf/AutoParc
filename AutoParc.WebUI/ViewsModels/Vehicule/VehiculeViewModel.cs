@@ -4,7 +4,7 @@ namespace AutoParc.WebUI.ViewsModels.Vehicule;
 
 public class VehiculeViewModel
 {
-    public int Id { get; set; }
+    public int? Id { get; set; }
      
     public string Marque { get; set; }
      
@@ -14,26 +14,26 @@ public class VehiculeViewModel
      
     public string? RaisonIndisponibilite { get; set; }
      
-    public int EntrepriseId { get; set; }
-    public EntrepriseModel Entreprise { get; set; } 
-     
-    public int? EmployeId { get; set; } 
-    public EmployeModel Employe { get; set; }
+    public int? EntrepriseId { get; set; }
+    public EntrepriseModel? Entreprise { get; set; } 
+
+    //public int? EmployeId { get; set; } 
+    //public EmployeModel Employe { get; set; }
     
     
-    public VehiculeViewModel ToVehiculeModel()
+    public VehiculeModel ToVehiculeModel(int EntrepriseId)
     {
-        return new VehiculeViewModel
+        return new VehiculeModel
         {
             Id = this.Id,
             Marque = this.Marque,
             Modele = this.Modele,
             Disponibilite = this.Disponibilite,
             RaisonIndisponibilite = this.RaisonIndisponibilite,
-            EntrepriseId = this.EntrepriseId,
-            Entreprise = this.Entreprise,
-            EmployeId = this.EmployeId,
-            Employe = this.Employe
+            EntrepriseId = EntrepriseId,
+            //Entreprise = this.Entreprise,
+            //EmployeId = this.EmployeId,
+            //Employe = this.Employe
         };
     }
 
@@ -48,10 +48,12 @@ public class VehiculeViewModel
             RaisonIndisponibilite = model.RaisonIndisponibilite,
             EntrepriseId = model.EntrepriseId,
             Entreprise = model.Entreprise,
-            EmployeId = model.EmployeId,
-            Employe = model.Employe
+            //EmployeId = model.EmployeId,
+            //Employe = model.Employe
         };
     }
+    
+    
     
     public static List<VehiculeViewModel> FromVehiculeModel(List<VehiculeModel> vehicules)
     {

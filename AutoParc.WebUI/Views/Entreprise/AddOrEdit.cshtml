@@ -1,0 +1,39 @@
+@model AddOrEditEntrepriseViewModel
+@using AutoParc.WebUI.ViewsModels.Entreprise
+
+@{
+    ViewData["Title"] = "Ajouter ou Modifier une Entreprise";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    <form method="post" asp-action="AddOrEdit" asp-controller="Entreprise">
+        <div asp-validation-summary="All"></div>
+        <input asp-for="EntrepriseToAddOrEdit.Id" type="hidden" />
+
+        <div class="mb-3">
+            <label for="Nom" class="form-label">Nom de l'entreprise</label>
+            <input asp-for="EntrepriseToAddOrEdit.Nom" class="form-control" id="Nom" placeholder="Entrez le nom de l'entreprise" />
+            <div class="invalid-feedback">
+                <span asp-validation-for="EntrepriseToAddOrEdit.Nom" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input asp-for="EntrepriseToAddOrEdit.ContratActif" type="checkbox" class="form-check-input" id="ContratActif" />
+            <label class="form-check-label" for="ContratActif">Contrat Actif</label>
+            <div class="invalid-feedback">
+                <span asp-validation-for="EntrepriseToAddOrEdit.ContratActif" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">
+                @(Model.EntrepriseToAddOrEdit != null && Model.EntrepriseToAddOrEdit.Id != null ? "Modifier l'entreprise" : "Ajouter l'entreprise")
+            </button>
+        </div>
+    </form>
+</div>
+
+<partial name="_ValidationScriptsPartial" />

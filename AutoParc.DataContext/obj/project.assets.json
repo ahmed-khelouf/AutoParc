@@ -2707,19 +2707,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ahmedkhelouf/.nuget/packages/": {}
+    "/Users/ayatkhelouf/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj",
+      "projectUniqueName": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj",
       "projectName": "AutoParc.DataContext",
-      "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj",
-      "packagesPath": "/Users/ahmedkhelouf/.nuget/packages/",
-      "outputPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/obj/",
+      "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj",
+      "packagesPath": "/Users/ayatkhelouf/.nuget/packages/",
+      "outputPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ahmedkhelouf/.nuget/NuGet/NuGet.Config"
+        "/Users/ayatkhelouf/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2731,8 +2731,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/AutoParc.Model.csproj": {
-              "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Model/AutoParc.Model.csproj"
+            "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/AutoParc.Model.csproj": {
+              "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Model/AutoParc.Model.csproj"
             }
           }
         }
@@ -2794,7 +2794,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/ayatkhelouf/.dotnet/sdk/6.0.428/RuntimeIdentifierGraph.json"
       }
     }
   }

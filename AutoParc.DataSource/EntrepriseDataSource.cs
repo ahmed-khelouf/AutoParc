@@ -20,4 +20,28 @@ public class EntrepriseDataSource : IEntrepriseDataSource
         return entreprises;
     }
 
+    public void AddOrUpdateEntreprise(EntrepriseModel entrepriseToAdd)
+    {
+        if(entrepriseToAdd.Id.HasValue)
+        {
+            bool exists = _context.Entreprise.Any(e => e.Id == entrepriseToAdd.Id);
+
+            if (!exists)
+            {
+                return;
+            }
+            _context.Entreprise.Update(entrepriseToAdd);
+        }
+        else
+        {
+            _context.Entreprise.Add(entrepriseToAdd);
+        }
+        _context.SaveChanges();
+    }
+
+    public EntrepriseModel? GetEntrepriseById(int id)
+    {
+        return _context.Entreprise.SingleOrDefault(e => e.Id == id);
+    }
+
 }

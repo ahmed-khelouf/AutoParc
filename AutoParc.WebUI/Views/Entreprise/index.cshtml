@@ -7,14 +7,20 @@
 <div class="container">
     <h2>@Model.PageTitle</h2>
 
+    <!-- Aligner le bouton Ajouter à droite -->
+    <div class="d-flex justify-content-end mb-3">
+        <a href="@Url.Action("AddOrEdit", "Entreprise")" class="btn btn-success">
+            Ajouter
+        </a>
+    </div>
+
     <table class="table table-bordered table-striped">
-        
         <tr>
             <th>Nom de l'Entreprise</th>
             <th>Contrat</th>
             <th>Actions</th>
         </tr>
-        
+
         <tbody>
         @foreach (var viewModel in Model.Entreprise)
         {
@@ -27,24 +33,24 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
-    table {
+    .table {
         width: 100%;
         margin-top: 20px;
         border-collapse: collapse;
     }
 
-    table th, table td {
+    .table th, .table td {
         padding: 12px;
         text-align: left;
-        border: 1px solid #ddd; 
+        border-bottom: 1px solid #ddd;
     }
 
-    table th {
-       
+    .table th {
+        background-color: #007bff;
+        color: white;
     }
-
     .btn-view-details {
-        background-color: #28a745;
+        background-color: #007bff;
         color: white;
         padding: 5px 15px;
         border: none;
@@ -54,7 +60,7 @@
     }
 
     .btn-view-details:hover {
-        background-color: #218838;
+        background-color: #0056b3;
     }
 
     .btn-view-details:focus {

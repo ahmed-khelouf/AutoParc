@@ -3419,19 +3419,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ahmedkhelouf/.nuget/packages/": {}
+    "/Users/ayatkhelouf/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/AutoParc.WebUI.csproj",
+      "projectUniqueName": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/AutoParc.WebUI.csproj",
       "projectName": "AutoParc.WebUI",
-      "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/AutoParc.WebUI.csproj",
-      "packagesPath": "/Users/ahmedkhelouf/.nuget/packages/",
-      "outputPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.WebUI/obj/",
+      "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/AutoParc.WebUI.csproj",
+      "packagesPath": "/Users/ayatkhelouf/.nuget/packages/",
+      "outputPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ahmedkhelouf/.nuget/NuGet/NuGet.Config"
+        "/Users/ayatkhelouf/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -3443,14 +3443,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj": {
-              "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj"
+            "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj": {
+              "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/AutoParc.DataContext.csproj"
             },
-            "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/AutoParc.DataSource.csproj": {
-              "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.DataSource/AutoParc.DataSource.csproj"
+            "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataSource/AutoParc.DataSource.csproj": {
+              "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataSource/AutoParc.DataSource.csproj"
             },
-            "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj": {
-              "projectPath": "/Users/ahmedkhelouf/Desktop/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj"
+            "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj": {
+              "projectPath": "/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.Senders/AutoParc.Senders.csproj"
             }
           }
         }
@@ -3507,7 +3507,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/ayatkhelouf/.dotnet/sdk/6.0.428/RuntimeIdentifierGraph.json"
       }
     }
   }

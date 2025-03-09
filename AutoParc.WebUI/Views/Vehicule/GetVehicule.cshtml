@@ -7,15 +7,24 @@
 <div class="container">
     <h2>@Model.PageTitle</h2>
 
-    @if (Model.VehiculeToEntreprise.Any())
+    <div class="mb-3">
+        <a href="@Url.Action("AddOrEdit", "Vehicule", new { IdEntreprise = Model.VehiculeToEntreprise?.FirstOrDefault()?.Entreprise?.Id })" class="btn btn-primary">
+            Ajouter
+        </a>
+    </div>
+
+    @if (Model.VehiculeToEntreprise != null && Model.VehiculeToEntreprise.Any())
     {
+        <h3>@Model.VehiculeToEntreprise.First().Entreprise.Nom</h3>
+
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th>Marque</th>
                 <th>Modèle</th>
                 <th>Disponibilité</th>
-                <th>Action</th>
+                <th>Etat</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -25,13 +34,21 @@
                     <td>@vehicule.Marque</td>
                     <td>@vehicule.Modele</td>
                     <td>
-                            <span class="@(vehicule.Disponibilite ? "text-success" : "text-danger")">
-                                @(vehicule.Disponibilite ? "Disponible" : "Indisponible")
-                            </span>
+                        <span class="@(vehicule.Disponibilite ? "text-success" : "text-danger")">
+                            @(vehicule.Disponibilite ? "Disponible" : "Indisponible")
+                        </span>
                     </td>
                     <td>
-                        <a href="@Url.Action("Details", "Vehicule", new { id = vehicule.Id })" class="btn btn-primary">
-                            Voir Détails
+                        @(vehicule.Disponibilite
+                            ? "Fonctionnelle"
+                            : (string.IsNullOrEmpty(vehicule.RaisonIndisponibilite)
+                                ? "Indisponible"
+                                : vehicule.RaisonIndisponibilite))
+                    </td>
+                    <td>
+                        <!-- Bouton Modifier -->
+                        <a href="@Url.Action("AddOrEdit", "Vehicule", new { id = vehicule.Id })" class="btn btn-warning btn-sm">
+                            Modifier
                         </a>
                     </td>
                 </tr>
@@ -75,6 +92,20 @@
 
     .btn-primary:hover {
         background-color: #0056b3;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: white;
+        padding: 5px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn-warning:hover {
+        background-color: #e0a800;
     }
 
     .text-success {

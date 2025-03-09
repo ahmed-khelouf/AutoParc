@@ -33,4 +33,42 @@ public class EntrepriseController : Controller
         }
         return View(indexViewModel);
     }
+
+    [HttpGet]
+    public IActionResult AddOrEdit(int? id = null)
+    {
+        AddOrEditEntrepriseViewModel addOrEditEntrepriseViewModel = new AddOrEditEntrepriseViewModel();
+
+        if (id.HasValue)
+        {
+            EntrepriseModel? entreprise = entrepriseDataSource.GetEntrepriseById(id.Value);
+
+            if (entreprise != null)
+            {
+                addOrEditEntrepriseViewModel.EntrepriseToAddOrEdit = EntrepriseViewModel.FromEntrepriseModel(entreprise);
+            }
+        }
+        else
+        {
+            addOrEditEntrepriseViewModel.EntrepriseToAddOrEdit = new EntrepriseViewModel
+            {
+                ContratActif = true  
+            };
+        }
+
+        return View(addOrEditEntrepriseViewModel);
+    }
+
+
+    [HttpPost]
+    public IActionResult AddOrEdit(AddOrEditEntrepriseViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            EntrepriseModel entrepriseToAdd = model.EntrepriseToAddOrEdit.ToEntrepriseModel();
+            entrepriseDataSource.AddOrUpdateEntreprise(entrepriseToAdd);
+            return RedirectToAction("Index");
+        }
+        return View(model);
+    }
 }
