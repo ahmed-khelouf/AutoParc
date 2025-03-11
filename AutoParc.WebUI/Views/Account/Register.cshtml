@@ -1,4 +1,3 @@
-@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model AutoParc.WebUI.ViewsModels.Account.RegisterViewModel
 @{
     ViewData["Title"] = "Register";
@@ -11,36 +10,6 @@
     <title>@ViewData["Title"]</title>
     <!-- Ajout de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ2QFJn68fJ4dWr5fD0oEpt6Lce+zHl2ipMkcRZ9FBeUepwTeM5hTzkMzZJb" crossorigin="anonymous">
-    <style>
-        .container {
-            max-width: 500px;
-            margin-top: 50px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2d3e50;
-        }
-
-        .form-group label {
-            font-size: 14px;
-        }
-
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            width: 100%;
-            padding: 10px;
-        }
-
-        .btn-custom:hover {
-            background-color: #0056b3;
-        }
-
-        .text-danger {
-            color: #e74c3c;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
@@ -48,31 +17,36 @@
 
     <form asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-
-        <!-- Champ Email -->
+        
         <div class="mb-3">
             <label asp-for="Email" class="form-label">Email</label>
             <input asp-for="Email" class="form-control" placeholder="Entrez votre email" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
-
-        <!-- Champ Mot de passe -->
+        
         <div class="mb-3">
             <label asp-for="Password" class="form-label">Mot de passe</label>
             <input asp-for="Password" class="form-control" type="password" placeholder="Entrez votre mot de passe" />
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
-
-        <!-- Champ Confirmation du mot de passe -->
+        
         <div class="mb-3">
             <label asp-for="ConfirmPassword" class="form-label">Confirmez le mot de passe</label>
             <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Confirmez votre mot de passe" />
             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
+        
 
-        <!-- Bouton de soumission -->
+        <div class="form-group">
+            <label for="EntrepriseId" class="form-label">Entreprise</label>
+            <select asp-for="EntrepriseId" asp-items="Model.AllEntreprises" class="form-control">
+                <option value="">Sélectionnez une entreprise</option>
+            </select>
+            <span asp-validation-for="EntrepriseId" class="text-danger"></span>
+        </div>
+        
         <div class="mb-3">
-            <button type="submit" class="btn btn-custom">S'inscrire</button>
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
         </div>
     </form>
 

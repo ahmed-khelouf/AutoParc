@@ -12,6 +12,12 @@ public class VehiculeDataSource : IVehiculeDataSource
         _context = context;
     }
 
+    public IEnumerable<VehiculeModel> GetVehicules()
+    {
+        IEnumerable<VehiculeModel> vehicules = _context.Vehicule;
+        return vehicules;
+    }
+    
     public List<VehiculeModel> GetVehiculeByEntreprise(int EntrepriseId)
     {
         var vehicules = _context.Vehicule

@@ -5,18 +5,17 @@
 }
 
 <div class="container">
-    <h2>@Model.PageTitle</h2>
-
-    <div class="mb-3">
-        <a href="@Url.Action("AddOrEdit", "Vehicule", new { IdEntreprise = Model.VehiculeToEntreprise?.FirstOrDefault()?.Entreprise?.Id })" class="btn btn-primary">
-            Ajouter
-        </a>
-    </div>
 
     @if (Model.VehiculeToEntreprise != null && Model.VehiculeToEntreprise.Any())
     {
-        <h3>@Model.VehiculeToEntreprise.First().Entreprise.Nom</h3>
-
+        <h3>@Model.PageTitle @Model.VehiculeToEntreprise.First().Entreprise.Nom</h3>
+        <div class="mb-3">
+            <div class="d-flex justify-content-end mb-3">
+                <a href="@Url.Action("AddOrEdit", "Vehicule", new { IdEntreprise = Model.VehiculeToEntreprise?.FirstOrDefault()?.Entreprise?.Id })" class="btn btn-success float-right">
+                    Ajouter
+                </a>
+            </div>
+        </div>
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -39,14 +38,9 @@
                         </span>
                     </td>
                     <td>
-                        @(vehicule.Disponibilite
-                            ? "Fonctionnelle"
-                            : (string.IsNullOrEmpty(vehicule.RaisonIndisponibilite)
-                                ? "Indisponible"
-                                : vehicule.RaisonIndisponibilite))
+                        @(vehicule.Disponibilite ? "Bon" : (string.IsNullOrEmpty(vehicule.RaisonIndisponibilite) ? "Indisponible" : vehicule.RaisonIndisponibilite))
                     </td>
                     <td>
-                        <!-- Bouton Modifier -->
                         <a href="@Url.Action("AddOrEdit", "Vehicule", new { id = vehicule.Id })" class="btn btn-warning btn-sm">
                             Modifier
                         </a>
@@ -80,8 +74,12 @@
         color: white;
     }
 
+    .table td {
+        background-color: #f9f9f9;
+    }
+
     .btn-primary {
-        background-color: #007bff;
+        background-color: #28a745;
         color: white;
         padding: 5px 15px;
         border: none;
@@ -91,7 +89,7 @@
     }
 
     .btn-primary:hover {
-        background-color: #0056b3;
+        background-color: #218838;
     }
 
     .btn-warning {

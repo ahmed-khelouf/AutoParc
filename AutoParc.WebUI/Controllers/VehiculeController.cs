@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AutoParc.WebUI.Controllers
 {
-    //[Authorize(Roles = "Admin")]
     public class VehiculeController : Controller
     {
         private readonly IVehiculeDataSource vehiculeDataSource;
@@ -29,7 +28,7 @@ namespace AutoParc.WebUI.Controllers
         {
             var viewModel = new GetVehiculeByEntrepriseViewModel
             {
-                PageTitle = "Véhicules associés à l'entreprise"
+                PageTitle = "Véhicules de l'entreprise"
             };
 
             if (IdEntreprise.HasValue)
@@ -44,8 +43,9 @@ namespace AutoParc.WebUI.Controllers
 
             return View(viewModel);
         }
-
+        
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddOrEdit(int? id = null)
         {
             AddOrEditVehiculeViewModel addOrEditVehiculeViewModel = new AddOrEditVehiculeViewModel();
@@ -66,6 +66,7 @@ namespace AutoParc.WebUI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddOrEdit(AddOrEditVehiculeViewModel model)
         {
             if (ModelState.IsValid)

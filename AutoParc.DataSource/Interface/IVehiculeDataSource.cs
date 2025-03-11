@@ -9,4 +9,6 @@ public interface IVehiculeDataSource
     public void AddOrUpdateVehicule(VehiculeModel vehiculeToAdd);
     
     public VehiculeModel? GetVehiculeById(int id);
+
+    public IEnumerable<VehiculeModel> GetVehicules();
 }

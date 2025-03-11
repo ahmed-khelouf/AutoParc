@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security.Claims;
 using AutoParc.DataSource;
+using AutoParc.DataSource.Interface;
+using AutoParc.Model;
 using AutoParc.Model.Identity;
 using AutoParc.WebUI.Controllers;
 using AutoParc.WebUI.ViewsModels.Account;
@@ -18,10 +20,13 @@ namespace EventTracker.WebUI.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<UserModel> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        
+        private readonly IEntrepriseDataSource entrepriseDataSource;
 
         public AccountController(ILogger<HomeController> logger, 
-            SignInDataSource signInDataSource, UserDataSource userDataSource, UserManager<UserModel> userManager, RoleManager<IdentityRole> roleManager)
+            SignInDataSource signInDataSource, UserDataSource userDataSource, UserManager<UserModel> userManager, RoleManager<IdentityRole> roleManager , IEntrepriseDataSource entrepriseDataSource)
         {
+            this.entrepriseDataSource = entrepriseDataSource;
             _logger = logger;
             _signInDataSource = signInDataSource;
             _userDataSource = userDataSource;
@@ -76,18 +81,18 @@ namespace EventTracker.WebUI.Controllers
             return View(model);
         }
 
-        //
         // GET: /Account/Register
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = "Account/Register")
         {
-            ViewData["ReturnUrl"] = "Account/Register";
-            _logger.LogInformation("TESTTTTTTTTTTTTT: {ReturnUrl}", returnUrl);
-            return View();
+            ViewData["ReturnUrl"] = returnUrl;
+
+            RegisterViewModel model = new RegisterViewModel();
+            model.AllEntreprises = getEntrepriseSelectListItems();
+            return View(model);
         }
 
-        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -95,39 +100,50 @@ namespace EventTracker.WebUI.Controllers
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = "Account/Register")
         {
             ViewData["ReturnUrl"] = returnUrl;
-            _logger.LogInformation("Register action called with returnUrl: {ReturnUrl}", returnUrl);
+            _logger.LogInformation(model.EntrepriseId.ToString());
+            RegisterViewModel r = new RegisterViewModel();
+            if (!ModelState.IsValid)
+            {
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    _logger.LogError("ModelState error: " + error.ErrorMessage);
+                }
+            }
+            
+            var user = new UserModel { UserName = model.Email, Email = model.Email, EntrepriseId = model.EntrepriseId };
+            var result = await _userDataSource.CreateAsync(user, model.Password);
+            
+            var roleExist = await _roleManager.RoleExistsAsync("Client");
+            if (!roleExist)
+            {
+                var roleResult = await _roleManager.CreateAsync(new IdentityRole("Client"));
+                if (!roleResult.Succeeded)
+                {
+     
+                    _logger.LogError("Erreur lors de la création du rôle Client.");
+                }
+            }
+            
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "Client");
+                //await _signInDataSource.SignInAsync(user, isPersistent: false);
+
+                _logger.LogInformation("Utilisateur créé avec succès.");
+                return RedirectToLocal("/");
+            }
+            AddErrors(result);
+
+            if (user != null)
+            {
+                r.AllEntreprises = getEntrepriseSelectListItems();
+                return View(r);
+            }
             
 
-            if (ModelState.IsValid)
-            {
-                var user = new UserModel() { UserName = model.Email, Email = model.Email };
-                var result = await _userDataSource.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
-                    // Send an email with this link
-                    //var code = await _userDataSource.GenerateEmailConfirmationTokenAsync(user);
-                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                    //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
-                    //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
-                    if (!await _roleManager.RoleExistsAsync("Client"))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole("Client"));
-                    }
-
-                    
-                    await _userManager.AddToRoleAsync(user, "Client");
-                    await _signInDataSource.SignInAsync(user, isPersistent: false);
-                    
-                    _logger.LogInformation(3, "User created a new account with password.");
-                    return RedirectToLocal(returnUrl);
-                }
-                AddErrors(result);
-            }
-
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
+
 
         //
         // POST: /Account/LogOff
@@ -487,6 +503,19 @@ namespace EventTracker.WebUI.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid code.");
                 return View(model);
             }
+        }
+        
+        private List<SelectListItem> getEntrepriseSelectListItems()
+        {
+            IEnumerable<EntrepriseModel> entreprises = entrepriseDataSource.GetEntreprises();
+
+            var entrepriseSelectList = entreprises.Select(entreprise => new SelectListItem
+            {
+                Value = entreprise.Id.ToString(),
+                Text = entreprise.Nom
+            }).ToList();
+
+            return entrepriseSelectList;
         }
 
         #region Helpers
