@@ -26,9 +26,9 @@
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.AssemblyInfoInputs.cache
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.AssemblyInfo.cs
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.csproj.CoreCompileInputs.cache
-/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.csproj.CopyComplete
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.dll
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/refint/AutoParc.DataContext.dll
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.pdb
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.genruntimeconfig.cache
 /Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/ref/AutoParc.DataContext.dll
+/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.DataContext/obj/Debug/net6.0/AutoParc.DataContext.csproj.CopyComplete
