@@ -44,21 +44,39 @@ namespace EventTracker.WebUI.Controllers
             return View();
         }
 
-        // POST: /Account/Login
+      // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = "Account/login")
         {
             ViewData["ReturnUrl"] = returnUrl;
+
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+
                 var result = await _signInDataSource.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
+                    
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+
+                    if (user != null)
+                    {
+                        var entrepriseId = user.EntrepriseId;
+
+                        if (entrepriseId.HasValue)
+                        {
+                            var entrepriseClaim = new Claim("EntrepriseId", entrepriseId.Value.ToString());
+                            await _userManager.AddClaimAsync(user, entrepriseClaim);
+                            
+                        }
+                    }
+                    
+                    await _signInDataSource.SignInAsync(user, isPersistent: model.RememberMe);
+                    
                     return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
@@ -76,10 +94,10 @@ namespace EventTracker.WebUI.Controllers
                     return View(model);
                 }
             }
-
-            // If we got this far, something failed, redisplay form
+            
             return View(model);
         }
+
 
         // GET: /Account/Register
         [HttpGet]

@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using AutoParc.DataSource;
 using AutoParc.DataSource.Interface;
 using AutoParc.Model;
@@ -15,11 +16,13 @@ namespace AutoParc.WebUI.Controllers
     {
         private readonly IVehiculeDataSource vehiculeDataSource;
         private readonly IEntrepriseDataSource entrepriseDataSource;
+        private readonly ILogger<HomeController> _logger;
 
-        public VehiculeController(IVehiculeDataSource vehiculeDataSource, IEntrepriseDataSource entrepriseDataSource)
-        {
+        public VehiculeController(ILogger<HomeController> logger, IVehiculeDataSource vehiculeDataSource, IEntrepriseDataSource entrepriseDataSource)
+        { 
             this.vehiculeDataSource = vehiculeDataSource;
             this.entrepriseDataSource = entrepriseDataSource;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -82,6 +85,33 @@ namespace AutoParc.WebUI.Controllers
             return RedirectToAction("Index", "Entreprise");
 
         }
+        
+        [HttpGet]
+        [Authorize]
+        public IActionResult GetVehiculeByEntrepriseForUser()
+        {
+            var entrepriseId = User.FindFirstValue("EntrepriseId");
+            //_logger.LogInformation("AHMMEDDD"+entrepriseId);
+            if (entrepriseId != null)
+            {
+                var idEntreprise = int.Parse(entrepriseId); 
+                var viewModel = new GetVehiculeByEntrepriseViewModel
+                {
+                    PageTitle = "Véhicules de votre entreprise"
+                };
+
+                List<VehiculeModel> vehicules = vehiculeDataSource.GetVehiculeByEntreprise(idEntreprise);
+
+                if (vehicules != null && vehicules.Any())
+                {
+                    viewModel.VehiculeToEntreprise = VehiculeViewModel.FromVehiculeModel(vehicules);
+                }
+              
+                return View(viewModel);
+            }
+                return View();
+        }
+
 
         private List<SelectListItem> getEntrepriseSelectListItems()
         {

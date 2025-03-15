@@ -17,8 +17,8 @@ public class VehiculeViewModel
     public int? EntrepriseId { get; set; }
     public EntrepriseModel? Entreprise { get; set; } 
 
-    //public int? EmployeId { get; set; } 
-    //public EmployeModel Employe { get; set; }
+    public int? EmployeId { get; set; } 
+    public EmployeModel Employe { get; set; }
     
     
     public VehiculeModel ToVehiculeModel(int EntrepriseId)
@@ -48,8 +48,8 @@ public class VehiculeViewModel
             RaisonIndisponibilite = model.RaisonIndisponibilite,
             EntrepriseId = model.EntrepriseId,
             Entreprise = model.Entreprise,
-            //EmployeId = model.EmployeId,
-            //Employe = model.Employe
+            EmployeId = model.EmployeId,
+            Employe = model.Employe
         };
     }
     

@@ -1,0 +1,138 @@
+@model AutoParc.WebUI.ViewsModels.Employee.GetEmployee
+
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">@Model.PageTitle</h2>
+
+    @if (Model.EmployeeToEntreprise != null && Model.EmployeeToEntreprise.Any())
+    {
+        <table class="table table-striped table-bordered table-hover shadow-sm rounded">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var employee in Model.EmployeeToEntreprise)
+            {
+                <tr>
+                    <td>@employee.Nom</td>
+                    <td>@employee.Prenom</td>
+                    <td>
+                        @if (employee.VehiculeId != null)
+                        {
+                            <form asp-action="DeleteVehicule" method="post">
+                                <input type="hidden" name="idVehicule" value="@employee.VehiculeId" />
+                                <input type="hidden" name="idEmployee" value="@employee.Id" />
+                                <button type="submit" class="btn btn-danger">Delete Vehicule</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <span>Non associé à une voiture</span>
+                        }
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Aucun employé trouvé pour cette entreprise.</p>
+    }
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .container {
+        max-width: 1200px;
+        margin-top: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #343a40;
+    }
+
+    .input-group input {
+        border-radius: 50px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group button {
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+
+    .table {
+        border-radius: 10px;
+        border-collapse: collapse;
+    }
+
+    .table th, .table td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #007bff;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .table tr:hover {
+        background-color: #f8f9fa;
+        transition: background-color 0.3s;
+    }
+
+    .table td a {
+        text-decoration: none;
+    }
+
+    .btn {
+        font-weight: bold;
+        border-radius: 25px;
+        padding: 12px 25px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    .shadow-sm {
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .rounded {
+        border-radius: 10px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+    }
+</style>

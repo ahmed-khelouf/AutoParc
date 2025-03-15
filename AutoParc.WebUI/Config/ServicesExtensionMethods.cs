@@ -35,6 +35,7 @@ public static class ServicesExtensionMethods
         
         services.AddScoped<IEntrepriseDataSource, EntrepriseDataSource>();
         services.AddScoped<IVehiculeDataSource, VehiculeDataSource>();
+        services.AddScoped<IEmployeeDataSource, EmployeeDataSource>();
         
         return services;
     }

@@ -22,7 +22,8 @@ public class VehiculeDataSource : IVehiculeDataSource
     {
         var vehicules = _context.Vehicule
             .Where(v => v.EntrepriseId == EntrepriseId)
-            .Include(v => v.Entreprise)  
+            .Include(v => v.Entreprise)
+            .Include(v => v.Employe) 
             .ToList();
     
         return vehicules;  

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoParc.DataContext.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    [Migration("20250308061411_AspNetIdentity")]
-    partial class AspNetIdentity
+    [Migration("20250315133248_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,35 +61,51 @@ namespace AutoParc.DataContext.Migrations
                         {
                             Id = 1,
                             EntrepriseId = 1,
-                            Nom = "Test 1",
-                            Prenom = "Test 1",
+                            Nom = "Dupont",
+                            Prenom = "Jean",
                             VehiculeId = 1
                         },
                         new
                         {
                             Id = 2,
                             EntrepriseId = 2,
-                            Nom = "Test 2",
-                            Prenom = "Test 2",
+                            Nom = "Martin",
+                            Prenom = "Paul",
                             VehiculeId = 2
                         },
                         new
                         {
                             Id = 3,
                             EntrepriseId = 3,
-                            Nom = "Test 3",
-                            Prenom = "Test 3",
+                            Nom = "Durand",
+                            Prenom = "Marie",
                             VehiculeId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            EntrepriseId = 3,
+                            Nom = "Petit",
+                            Prenom = "Luc",
+                            VehiculeId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            EntrepriseId = 3,
+                            Nom = "Leroy",
+                            Prenom = "Sophie",
+                            VehiculeId = 5
                         });
                 });
 
             modelBuilder.Entity("AutoParc.Model.EntrepriseModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
                     b.Property<bool>("ContratActif")
                         .HasColumnType("bit");
@@ -107,19 +123,19 @@ namespace AutoParc.DataContext.Migrations
                         {
                             Id = 1,
                             ContratActif = true,
-                            Nom = "Test 1"
+                            Nom = "Entreprise Alpha"
                         },
                         new
                         {
                             Id = 2,
                             ContratActif = false,
-                            Nom = "Test 2"
+                            Nom = "Entreprise Beta"
                         },
                         new
                         {
                             Id = 3,
                             ContratActif = true,
-                            Nom = "Test 3"
+                            Nom = "Entreprise Gamma"
                         });
                 });
 
@@ -168,10 +184,6 @@ namespace AutoParc.DataContext.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -195,15 +207,50 @@ namespace AutoParc.DataContext.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "admin-user",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f1d638fb-6d73-4567-a3df-71510d951c8d",
+                            Email = "admin@autoparc.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@AUTOPARC.COM",
+                            NormalizedUserName = "ADMIN@AUTOPARC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHMIpmSHoSGFbjb0MlXVY1dlZJTtHAtOv+Im/z4znAcnTH+pU0FXAXVJE50bAcadxw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "e3cdd1a9-d336-43a5-b93c-b32c912f8483",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@autoparc.com"
+                        },
+                        new
+                        {
+                            Id = "client-user",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ca2e7a8e-9b69-4e37-b8b0-cac2136311e7",
+                            Email = "client@autoparc.com",
+                            EmailConfirmed = true,
+                            EntrepriseId = 1,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "CLIENT@AUTOPARC.COM",
+                            NormalizedUserName = "CLIENT@AUTOPARC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPGA9OlznpSb4mgXEg5ylwHL9WWvZTBvwXH88C5kinXcMRk1jDhOKnXpPUwvyedmSg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "0fedf64e-9573-44bf-9b9d-279aa22fc701",
+                            TwoFactorEnabled = false,
+                            UserName = "client@autoparc.com"
+                        });
                 });
 
             modelBuilder.Entity("AutoParc.Model.VehiculeModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
                     b.Property<bool>("Disponibilite")
                         .HasColumnType("bit");
@@ -227,8 +274,6 @@ namespace AutoParc.DataContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EmployeId");
-
                     b.HasIndex("EntrepriseId");
 
                     b.ToTable("Vehicule");
@@ -240,8 +285,8 @@ namespace AutoParc.DataContext.Migrations
                             Disponibilite = true,
                             EmployeId = 1,
                             EntrepriseId = 1,
-                            Marque = "Test 1",
-                            Modele = "Test 1"
+                            Marque = "Renault",
+                            Modele = "Clio"
                         },
                         new
                         {
@@ -249,9 +294,9 @@ namespace AutoParc.DataContext.Migrations
                             Disponibilite = false,
                             EmployeId = 2,
                             EntrepriseId = 2,
-                            Marque = "Test 2",
-                            Modele = "Test 2",
-                            RaisonIndisponibilite = "Test 2"
+                            Marque = "Peugeot",
+                            Modele = "208",
+                            RaisonIndisponibilite = "En réparation"
                         },
                         new
                         {
@@ -259,8 +304,26 @@ namespace AutoParc.DataContext.Migrations
                             Disponibilite = true,
                             EmployeId = 3,
                             EntrepriseId = 3,
-                            Marque = "Test 3",
-                            Modele = "Test 3"
+                            Marque = "Citroën",
+                            Modele = "C3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Disponibilite = true,
+                            EmployeId = 4,
+                            EntrepriseId = 3,
+                            Marque = "Toyota",
+                            Modele = "Yaris"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Disponibilite = true,
+                            EmployeId = 5,
+                            EntrepriseId = 3,
+                            Marque = "Ford",
+                            Modele = "Focus"
                         });
                 });
 
@@ -289,6 +352,22 @@ namespace AutoParc.DataContext.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "role-admin",
+                            ConcurrencyStamp = "395d9063-d93b-460c-9d26-b627be631806",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "role-client",
+                            ConcurrencyStamp = "a2eebaa1-b0c5-42de-af8d-efdb8231a063",
+                            Name = "Client",
+                            NormalizedName = "CLIENT"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -376,6 +455,18 @@ namespace AutoParc.DataContext.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "admin-user",
+                            RoleId = "role-admin"
+                        },
+                        new
+                        {
+                            UserId = "client-user",
+                            RoleId = "role-client"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -406,7 +497,7 @@ namespace AutoParc.DataContext.Migrations
                         .IsRequired();
 
                     b.HasOne("AutoParc.Model.VehiculeModel", "Vehicule")
-                        .WithOne()
+                        .WithOne("Employe")
                         .HasForeignKey("AutoParc.Model.EmployeModel", "VehiculeId");
 
                     b.Navigation("Entreprise");
@@ -425,17 +516,11 @@ namespace AutoParc.DataContext.Migrations
 
             modelBuilder.Entity("AutoParc.Model.VehiculeModel", b =>
                 {
-                    b.HasOne("AutoParc.Model.EmployeModel", "Employe")
-                        .WithMany()
-                        .HasForeignKey("EmployeId");
-
                     b.HasOne("AutoParc.Model.EntrepriseModel", "Entreprise")
                         .WithMany("Vehicules")
                         .HasForeignKey("EntrepriseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Employe");
 
                     b.Navigation("Entreprise");
                 });
@@ -496,6 +581,11 @@ namespace AutoParc.DataContext.Migrations
                     b.Navigation("Employes");
 
                     b.Navigation("Vehicules");
+                });
+
+            modelBuilder.Entity("AutoParc.Model.VehiculeModel", b =>
+                {
+                    b.Navigation("Employe");
                 });
 #pragma warning restore 612, 618
         }

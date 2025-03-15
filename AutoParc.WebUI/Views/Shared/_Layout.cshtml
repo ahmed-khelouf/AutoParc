@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,8 +69,17 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Inscription</a>
                             </li>
                         }
-
-               
+                        else
+                        {
+                            var entrepriseId = User.FindFirstValue("EntrepriseId");
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Vehicule" asp-action="GetVehiculeByEntrepriseForUser" asp-route-idEntreprise="@entrepriseId">Vehicule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="GetEmployeeByEntrepriseForUser" asp-route-idEntreprise="@entrepriseId">Salarier</a>
+                            </li>
+                        }
+                        
                         <li class="nav-item">
                             <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post">
                                 <button type="submit" class="deconnexion-btn">Déconnexion</button>
