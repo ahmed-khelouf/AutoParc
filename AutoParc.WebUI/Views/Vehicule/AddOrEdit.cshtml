@@ -5,31 +5,30 @@
 }
 
 <div class="container mt-5">
-    <h2 class="mb-4">@ViewData["Title"]</h2>
+    <h2 class="text-center mb-4">@ViewData["Title"]</h2>
 
     <form method="post" asp-action="AddOrEdit" asp-controller="Vehicule">
-        <div asp-validation-summary="All"></div>
+        <div asp-validation-summary="All" class="alert alert-danger d-none" id="validation-summary"></div>
         <input asp-for="VehiculeToAddOrEdit.Id" type="hidden" />
        
-        <div class="mb-3">
+
+        <div class="mb-4">
             <label for="Marque" class="form-label">Marque</label>
-            <input asp-for="VehiculeToAddOrEdit.Marque" class="form-control" id="Marque" placeholder="Entrez la marque de la voiture" />
+            <input asp-for="VehiculeToAddOrEdit.Marque" class="form-control form-control-lg" id="Marque" placeholder="Entrez la marque de la voiture" />
             <div class="invalid-feedback">
                 <span asp-validation-for="VehiculeToAddOrEdit.Marque" class="text-danger"></span>
             </div>
         </div>
 
-
-        <div class="mb-3">
+        <div class="mb-4">
             <label for="Modele" class="form-label">Modèle</label>
-            <input asp-for="VehiculeToAddOrEdit.Modele" class="form-control" id="Modele" placeholder="Entrez le modèle de la voiture" />
+            <input asp-for="VehiculeToAddOrEdit.Modele" class="form-control form-control-lg" id="Modele" placeholder="Entrez le modèle de la voiture" />
             <div class="invalid-feedback">
                 <span asp-validation-for="VehiculeToAddOrEdit.Modele" class="text-danger"></span>
             </div>
         </div>
 
-      
-        <div class="mb-3 form-check">
+        <div class="mb-4 form-check">
             <input asp-for="VehiculeToAddOrEdit.Disponibilite" type="checkbox" class="form-check-input" id="Disponibilite" />
             <label class="form-check-label" for="Disponibilite">Disponible</label>
             <div class="invalid-feedback">
@@ -37,30 +36,124 @@
             </div>
         </div>
 
-    
-        <div class="mb-3">
+        <div class="mb-4">
             <label for="RaisonIndisponibilite" class="form-label">Raison de l'indisponibilité (si la voiture n'est pas disponible)</label>
-            <input asp-for="VehiculeToAddOrEdit.RaisonIndisponibilite" class="form-control" id="RaisonIndisponibilite" placeholder="Entrez la raison si la voiture est indisponible" />
+            <input asp-for="VehiculeToAddOrEdit.RaisonIndisponibilite" class="form-control form-control-lg" id="RaisonIndisponibilite" placeholder="Entrez la raison si la voiture est indisponible" />
             <div class="invalid-feedback">
                 <span asp-validation-for="VehiculeToAddOrEdit.RaisonIndisponibilite" class="text-danger"></span>
             </div>
         </div>
 
-       
-        <div class="mb-3">
-            <label for="EntrepriseId" class="form-label">Entreprise</label>
-            <select asp-for="EntrepriseId" asp-items="Model.EntreprisesAvailable" class="form-control">
-                <option value="">Sélectionnez une entreprise</option> 
-            </select>
+        @if(Model.VehiculeToAddOrEdit != null && Model.VehiculeToAddOrEdit.Id != null)
+        {
+            <input asp-for="EntrepriseId" type="hidden" />
+            <label for="EntrepriseId" class="form-label"></label>
             <span asp-validation-for="EntrepriseId" class="text-danger"></span>
-        </div>
-        
+        }
+        else
+        {
+            <div class="mb-4">
+                <div class="mb-3">
+                    <label for="EntrepriseId" class="form-label">Entreprise</label>
+                    <select asp-for="EntrepriseId" asp-items="Model.EntreprisesAvailable" class="form-control">
+                        <option value="">Sélectionnez une entreprise</option>
+                    </select>
+                    <span asp-validation-for="EntrepriseId" class="text-danger"></span>
+                </div>
+            </div>
+            <input asp-for="EntrepriseId" type="hidden" />
+        }
+
         <div class="d-grid gap-2 mt-4">
-            <button type="submit" class="btn btn-primary btn-lg">
+            <button type="submit" class="btn btn-primary btn-lg rounded-pill">
                 @(Model.VehiculeToAddOrEdit != null && Model.VehiculeToAddOrEdit.Id != null ? "Modifier la voiture" : "Ajouter une voiture")
             </button>
         </div>
     </form>
 </div>
 
+<partial name="_ValidationScriptsPartial" />
 
+<style>
+    .container {
+        max-width: 600px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #343a40;
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 25px;
+        padding: 12px;
+        font-size: 1.1rem;
+        border: 1px solid #ced4da;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    .form-label {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .form-check-label {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 12px 20px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .btn-primary:focus {
+        outline: none;
+    }
+
+    .invalid-feedback {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .text-danger {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    #validation-summary {
+        font-size: 1rem;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .rounded-pill {
+        border-radius: 50px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        padding: 10px;
+    }
+</style>

@@ -1,8 +1,9 @@
 @model AutoParc.WebUI.ViewsModels.Statistique.StatistiqueViewModel
 
+<h3 class="text-center">@Model.PageTitle</h3>
 <div class="container">
     <div class="statistics-container">
-        <h3>@Model.PageTitle</h3>
+        
         <div class="statistics-cards">
             <div class="stat-card">
                 <h5>Total des entreprises</h5>
@@ -18,19 +19,24 @@
                 <h5>Entreprises inactives</h5>
                 <p class="stat-value">@Model.Stats.InactiveEntreprises</p>
             </div>
-
+        </div>
+    </div>
+    
+    <div class="statistics-container mt-4">
+        
+        <div class="statistics-cards">
             <div class="stat-card">
                 <h5>Total de véhicules</h5>
                 <p class="stat-value">@Model.Stats.TotalVéhicules</p>
             </div>
-            
+
             <div class="stat-card active">
-                <h5>Total des véhicules disponible</h5>
+                <h5>Total des véhicules disponibles</h5>
                 <p class="stat-value">@Model.Stats.VehiculesDisponible</p>
             </div>
 
             <div class="stat-card inactive">
-                <h5>Total des véhicules pas disponible</h5>
+                <h5>Total des véhicules non disponibles</h5>
                 <p class="stat-value">@Model.Stats.VehiculesPasDispo</p>
             </div>
         </div>
@@ -39,65 +45,82 @@
 
 <style>
     .container {
-        margin-top: 20px;
+        margin-top: 30px;
+        padding: 0 15px;
     }
 
     h3 {
         color: #007bff;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
     }
 
-    h4 {
-        margin-top: 30px;
-        color: #333;
-    }
-    
     .statistics-container {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
     }
 
     .statistics-cards {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap: wrap;
+        gap: 20px;
         margin-top: 20px;
     }
 
     .stat-card {
         background-color: #ffffff;
         padding: 20px;
-        margin: 10px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 260px;
         text-align: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     .stat-card h5 {
-        font-size: 16px;
-        color: #333;
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 15px;
     }
 
     .stat-value {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #007bff;
     }
-    
+
     .active {
         background-color: #d4edda;
         border: 1px solid #c3e6cb;
+        transition: background-color 0.3s ease-in-out;
     }
 
     .inactive {
         background-color: #f8d7da;
         border: 1px solid #f5c6cb;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .active:hover {
+        background-color: #c3e6cb;
+    }
+
+    .inactive:hover {
+        background-color: #f1b0b7;
     }
     
     .statistics-by-entreprise {
-        margin-top: 30px;
+        margin-top: 40px;
     }
 
     .entreprise-stats-list {
@@ -107,12 +130,15 @@
 
     .entreprise-stats-list li {
         background-color: #f1f1f1;
-        padding: 10px;
+        padding: 12px;
         margin-bottom: 10px;
         border-radius: 5px;
+        font-size: 1rem;
+        color: #333;
     }
 
     .entreprise-stats-list strong {
         color: #007bff;
+        font-weight: bold;
     }
 </style>

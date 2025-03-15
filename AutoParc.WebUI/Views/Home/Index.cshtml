@@ -1,8 +1,120 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bienvenue sur la plateforme de gestion de votre parc automobile";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row justify-content-center text-center mt-5">
+        <div class="col-md-8">
+            <h1>Bienvenue sur la plateforme de gestion de votre parc automobile</h1>
+            <p class="lead">Gérez efficacement vos véhicules, vos salariés et l'affectation des véhicules avec cette plateforme simple et intuitive.</p>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center text-center mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-lg">
+                <img src="https://media.istockphoto.com/id/1473399467/fr/photo/un-vendeur-montre-des-voitures-à-un-couple-chez-le-concessionnaire.jpg?s=612x612&w=0&k=20&c=6GyVet5HPhpzr8uliv9WnqyMG0Pk7Enzxoc87bhd4Yc=" class="card-img-top" alt="Véhicules">
+                <div class="card-body">
+                    <h5 class="card-title">Liste de vos Véhicules</h5>
+                    <p class="card-text">Vous pouvez consulter la liste complète de vos véhicules.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-lg">
+                <img src="https://www.evryware.fr/wp-content/uploads/2018/12/salaries-849x566.jpg" class="card-img-top" alt="Salariés">
+                <div class="card-body">
+                    <h5 class="card-title">Liste de vos Salariés</h5>
+                    <p class="card-text">Accédez à la liste de vos salariés, consultez leurs informations et suivez leur activité.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-lg">
+                <img src="https://ulys.com/static/5f34cbb9c8a08be5f1423056962083a2/848ca/un_salarie_doit-il_utiliser_son_vehicule_personnel_ou_une_voiture_de_societe_.jpg" class="card-img-top" alt="Véhicules assignés">
+                <div class="card-body">
+                    <h5 class="card-title">Association Véhicule / Salarié</h5>
+                    <p class="card-text">Découvrez quel salarié est associé à chaque véhicule pour une gestion claire et efficace.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section de contact -->
+    <div class="row justify-content-center text-center mt-5">
+        <div class="col-md-8">
+            <h2>Besoin d'aide ?</h2>
+            <p>Si vous avez des questions sur l'utilisation de la plateforme, notre équipe est à votre disposition pour vous aider.</p>
+            <p>Contactez-nous par email à <a href="mailto:contact@autoParc.com">contact@autoParc.com</a>.</p>
+        </div>
+    </div>
+    
 </div>
+
+<style>
+    .container {
+        max-width: 1200px;
+    }
+
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .card-body {
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .shadow-lg {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mt-5 {
+        margin-top: 3rem;
+    }
+
+    .mb-5 {
+        margin-bottom: 3rem;
+    }
+
+    .text-muted {
+        color: #6c757d;
+    }
+</style>

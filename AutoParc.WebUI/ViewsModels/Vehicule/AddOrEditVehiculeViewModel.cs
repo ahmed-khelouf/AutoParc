@@ -5,7 +5,7 @@ namespace AutoParc.WebUI.ViewsModels.Vehicule
 {
     public class AddOrEditVehiculeViewModel
     {
-        public string PageTitle { get; set; } = "Ajouter ou Modifier un Véhicule"; 
+        public string PageTitle { get; set; } = "Véhicule"; 
         public VehiculeViewModel VehiculeToAddOrEdit { get; set; }
         public int EntrepriseId { get; set; }
         public IList<SelectListItem> EntreprisesAvailable { get; set; }

@@ -19,20 +19,25 @@ public class EntrepriseController : Controller
         this.entrepriseDataSource = entrepriseDataSource;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string searchTerm)
     {
-        IEnumerable<EntrepriseModel> entreprises = entrepriseDataSource.GetEntreprises(); 
+        IEnumerable<EntrepriseModel> entreprises = entrepriseDataSource.GetEntreprises();
         
-        EntrepriseIndexViewModel indexViewModel = new EntrepriseIndexViewModel();
-        indexViewModel.PageTitle = "Liste des entreprises";
-        
-        indexViewModel.Entreprise = new();
-        foreach (var e in entreprises)
+        if (!string.IsNullOrEmpty(searchTerm))
         {
-            indexViewModel.Entreprise.Add(EntrepriseViewModel.FromEntrepriseModel(e));
+            entreprises = entreprises.Where(e => e.Nom.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
         }
+        
+        EntrepriseIndexViewModel indexViewModel = new EntrepriseIndexViewModel
+        {
+            PageTitle = "Liste des entreprises",
+            SearchTerm = searchTerm, 
+            Entreprise = entreprises.Select(e => EntrepriseViewModel.FromEntrepriseModel(e)).ToList()
+        };
         return View(indexViewModel);
     }
+
+
 
     [HttpGet]
     public IActionResult AddOrEdit(int? id = null)

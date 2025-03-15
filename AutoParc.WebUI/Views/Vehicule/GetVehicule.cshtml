@@ -1,118 +1,156 @@
+
 @model AutoParc.WebUI.ViewsModels.Vehicule.GetVehiculeByEntrepriseViewModel
 
 @{
     ViewData["Title"] = Model.PageTitle;
 }
 
-<div class="container">
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+        @Model.PageTitle
+        @if (Model.VehiculeToEntreprise != null && Model.VehiculeToEntreprise.Any())
+        {
+            @Model.VehiculeToEntreprise.FirstOrDefault()?.Entreprise?.Nom
+        }
+    </h2>
+
+
 
     @if (Model.VehiculeToEntreprise != null && Model.VehiculeToEntreprise.Any())
     {
-        <h3>@Model.PageTitle @Model.VehiculeToEntreprise.First().Entreprise.Nom</h3>
-        <div class="mb-3">
-            <div class="d-flex justify-content-end mb-3">
-                <a href="@Url.Action("AddOrEdit", "Vehicule", new { IdEntreprise = Model.VehiculeToEntreprise?.FirstOrDefault()?.Entreprise?.Id })" class="btn btn-success float-right">
-                    Ajouter
-                </a>
-            </div>
+        <div class="d-flex justify-content-end mb-3">
+            <a href="@Url.Action("AddOrEdit", "Vehicule")" class="btn btn-success rounded-pill px-4">
+                Ajouter un Véhicule
+            </a>
         </div>
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>Marque</th>
-                <th>Modèle</th>
-                <th>Disponibilité</th>
-                <th>Etat</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var vehicule in Model.VehiculeToEntreprise)
-            {
+        <div class="table-responsive mt-4">
+            <table class="table table-striped table-bordered table-hover shadow-sm rounded">
+                <thead>
                 <tr>
-                    <td>@vehicule.Marque</td>
-                    <td>@vehicule.Modele</td>
-                    <td>
-                        <span class="@(vehicule.Disponibilite ? "text-success" : "text-danger")">
-                            @(vehicule.Disponibilite ? "Disponible" : "Indisponible")
-                        </span>
-                    </td>
-                    <td>
-                        @(vehicule.Disponibilite ? "Bon" : (string.IsNullOrEmpty(vehicule.RaisonIndisponibilite) ? "Indisponible" : vehicule.RaisonIndisponibilite))
-                    </td>
-                    <td>
-                        <a href="@Url.Action("AddOrEdit", "Vehicule", new { id = vehicule.Id })" class="btn btn-warning btn-sm">
-                            Modifier
-                        </a>
-                    </td>
+                    <th>Marque</th>
+                    <th>Modèle</th>
+                    <th>Disponibilité</th>
+                    <th>Etat</th>
+                    <th>Actions</th>
                 </tr>
-            }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                @foreach (var vehicule in Model.VehiculeToEntreprise)
+                {
+                    <tr>
+                        <td>@vehicule.Marque</td>
+                        <td>@vehicule.Modele</td>
+                        <td>
+<span class="@(vehicule.Disponibilite ? "text-success" : "text-danger")">
+@(vehicule.Disponibilite ? "Disponible" : "Indisponible")
+</span>
+                        </td>
+                        <td>@vehicule.RaisonIndisponibilite</td>
+                        <td>
+                            <a href="@Url.Action("AddOrEdit", "Vehicule", new { id = vehicule.Id })" class="btn btn-warning rounded-pill px-4">
+                                Modifier
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
     }
     else
     {
-        <p>Aucun véhicule associé à cette entreprise.</p>
+        <p class="text-center">Aucun véhicule associé à cette entreprise.</p>
     }
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
+    .container {
+        max-width: 1200px;
+        margin-top: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #343a40;
+        font-weight: bold;
+    }
+
+    .d-flex .btn-success {
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 12px 25px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
     .table {
+        border-radius: 10px;
+        border-collapse: collapse;
         width: 100%;
         margin-top: 20px;
-        border-collapse: collapse;
     }
 
     .table th, .table td {
-        padding: 12px;
+        padding: 12px 15px;
         text-align: left;
-        border-bottom: 1px solid #ddd;
     }
 
     .table th {
         background-color: #007bff;
         color: white;
+        text-transform: uppercase;
     }
 
-    .table td {
-        background-color: #f9f9f9;
+    .table tr:hover {
+        background-color: #f8f9fa;
+        transition: background-color 0.3s;
+    }
+
+    .table td a {
+        text-decoration: none;
     }
 
     .btn-primary {
-        background-color: #28a745;
+        background-color: #007bff;
         color: white;
-        padding: 5px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .btn-primary:hover {
-        background-color: #218838;
-    }
-
-    .btn-warning {
-        background-color: #ffc107;
-        color: white;
-        padding: 5px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-    }
-
-    .btn-warning:hover {
-        background-color: #e0a800;
+        background-color: #0056b3;
+        transform: scale(1.05);
     }
 
     .text-success {
-        color: green;
+        color: #28a745;
         font-weight: bold;
     }
 
     .text-danger {
-        color: red;
+        color: #dc3545;
         font-weight: bold;
+    }
+
+    .shadow-sm {
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .rounded {
+        border-radius: 10px;
     }
 </style>
