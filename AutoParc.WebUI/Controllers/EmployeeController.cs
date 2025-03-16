@@ -68,7 +68,7 @@ namespace AutoParc.WebUI.Controllers
                         .Where(e => e.VehiculeId == null) 
                         .Select(e => new SelectListItem { Value = e.Id.ToString(), Text = e.Nom }).ToList(),
                     Vehicules = vehiculeDataSource.GetVehiculeByEntreprise(idEntreprise)
-                        .Where(v => v.EmployeId == null) 
+                        .Where(v => v.Disponibilite == true && v.EmployeId == null)
                         .Select(v => new SelectListItem { Value = v.Id.ToString(), Text = v.Marque + " " + v.Modele })
                         .ToList()
                 };
@@ -109,6 +109,31 @@ namespace AutoParc.WebUI.Controllers
         {
             employeeDataSource.DeleteVehicule(idVehicule, idEmployee);
             return RedirectToAction("GetEmployeeByEntrepriseForUser");
+        }
+        
+        [HttpGet]
+        [Authorize]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Add(AddEmployeeViewModel model)
+        {
+            var entrepriseId = User.FindFirstValue("EntrepriseId");
+            if (ModelState.IsValid)
+            {
+                if (int.TryParse(entrepriseId, out int parsedEntrepriseId))
+                {
+                    EmployeModel employeeToAdd = model.EntrepriseToAdd.ToEmployeeModel(parsedEntrepriseId);
+                    employeeDataSource.AddEmployee(employeeToAdd);
+                    return RedirectToAction("GetEmployeeByEntrepriseForUser");
+                }
+            }
+
+            return View(model);
         }
     }
 }

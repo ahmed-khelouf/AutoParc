@@ -31,7 +31,7 @@ public class VehiculeDataSource : IVehiculeDataSource
     
     public void AddOrUpdateVehicule(VehiculeModel vehiculeToAdd)
     {
-        if(vehiculeToAdd.Id.HasValue)
+        if (vehiculeToAdd.Id.HasValue)
         {
             bool exists = _context.Vehicule.Any(e => e.Id == vehiculeToAdd.Id);
 
@@ -39,12 +39,24 @@ public class VehiculeDataSource : IVehiculeDataSource
             {
                 return;
             }
+
+            if (!vehiculeToAdd.Disponibilite)
+            {
+                var employe = _context.Employe.SingleOrDefault(e => e.VehiculeId == vehiculeToAdd.Id);
+                if (employe != null)
+                {
+                    employe.VehiculeId = null;
+                    _context.Employe.Update(employe);
+                }
+            }
+
             _context.Vehicule.Update(vehiculeToAdd);
         }
         else
         {
             _context.Vehicule.Add(vehiculeToAdd);
         }
+
         _context.SaveChanges();
     }
     

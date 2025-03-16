@@ -71,6 +71,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9WZXJpZnlDb2RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Employee/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ayatkhelouf/RiderProjects/AutoParc/AutoParc.WebUI/Views/Employee/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

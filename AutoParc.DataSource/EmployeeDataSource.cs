@@ -59,5 +59,11 @@ public class EmployeeDataSource : IEmployeeDataSource
     
         _context.SaveChanges();
     }
+    
+    public void AddEmployee(EmployeModel employeeToAdd)
+    {
+        _context.Employe.Add(employeeToAdd);
+        _context.SaveChanges();
+    }
   
 }

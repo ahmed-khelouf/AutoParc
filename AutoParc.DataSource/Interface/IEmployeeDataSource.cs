@@ -9,4 +9,6 @@ public interface IEmployeeDataSource
     public void UpdateVehicule(int idVehicule , int idEmployee);
     public void DeleteVehicule(int idVehicule , int idEmployee);
     
+    public void AddEmployee(EmployeModel employeeToAdd);
+    
 }
